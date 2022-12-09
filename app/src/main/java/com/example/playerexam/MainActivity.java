@@ -20,13 +20,16 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import java.io.IOException;
 
 
-
 public class MainActivity extends YouTubeBaseActivity {
 
-    public String VIDEO_URL = "http://sites.google.com/site/ubiaccessmobile/sample_video.mp4";
-    MediaPlayer mediaPlayer = new MediaPlayer();
     String TAG = "[메인 액티비티]";
+    //    public String VIDEO_URL = "http://sites.google.com/site/ubiaccessmobile/sample_video.mp4";
+    //    public String SOUND_URL = "http://sites.google.com/site/ubiaccessmobile/sample_audio.amr";
+
+    MediaPlayer mediaPlayer = new MediaPlayer();
+    int position = 0; // 현재 재생되고 있는 위치
     Button playBtn;
+
     VideoView videoView;
     YouTubePlayerView youTubePlayerView;
     YouTubePlayer.OnInitializedListener listener;
@@ -40,7 +43,9 @@ public class MainActivity extends YouTubeBaseActivity {
         listener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                // 해당 영상의 고유 ID를 가져와서 유튭 플레이어에서 영상을 보여준다.
                 youTubePlayer.loadVideo("01763YEx4Fw");
+//                youTubePlayer.loadPlaylist("01763YEx4Fw");
             }
 
             @Override
@@ -57,8 +62,9 @@ public class MainActivity extends YouTubeBaseActivity {
             }
         });
 
+
 //        videoView = findViewById(R.id.videoView);
-        MediaController mc = new MediaController(this);
+//        MediaController mc = new MediaController(this);
 //        videoView.setMediaController(mc);
 
         //재생 준비가 되었을 때
@@ -117,6 +123,7 @@ public class MainActivity extends YouTubeBaseActivity {
 //                preper();
 //            }
 //        });
+
 
     }
 

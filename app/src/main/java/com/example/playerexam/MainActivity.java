@@ -30,6 +30,7 @@ public class MainActivity extends YouTubeBaseActivity {
     int position = 0; // 현재 재생되고 있는 위치
     Button playBtn;
 
+
     VideoView videoView;
     YouTubePlayerView youTubePlayerView;
     YouTubePlayer.OnInitializedListener listener;
